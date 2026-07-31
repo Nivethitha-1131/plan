@@ -1,11 +1,13 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { X, Clock, Award, ShieldCheck, Sparkles, Calendar, Heart } from 'lucide-react';
+import { X, Clock, Award, ShieldCheck, Sparkles, Calendar, Heart, ShoppingBag } from 'lucide-react';
 
 export const SareeDetailModal = ({
   saree,
   onClose,
   onRequestViewing,
+  onAddToCart,
+  onBuyNow,
 }) => {
   if (!saree) return null;
 
@@ -84,6 +86,23 @@ export const SareeDetailModal = ({
                   "{saree.description}"
                 </p>
 
+                {/* Price Display */}
+                {saree.price && (
+                  <div className="flex items-baseline space-x-3 bg-[#F3EAD8]/80 p-4 rounded-2xl border border-[#D4AF37]/35">
+                    <span className="font-cinzel text-2xl font-bold text-[#8C6D38]">
+                      ₹{saree.price.toLocaleString('en-IN')}
+                    </span>
+                    {saree.originalPrice && (
+                      <span className="text-xs text-[#8A756C] line-through font-medium">
+                        ₹{saree.originalPrice.toLocaleString('en-IN')}
+                      </span>
+                    )}
+                    <span className="text-[10px] font-bold text-[#2E7D32] bg-[#E8F5E9] px-2.5 py-0.5 rounded-full uppercase ml-auto">
+                      IN STOCK
+                    </span>
+                  </div>
+                )}
+
                 {/* Specs Grid */}
                 <div className="grid grid-cols-2 gap-3.5 text-xs bg-[#F3EAD8]/60 p-4.5 rounded-2xl border border-[#E5D7B8]">
                   <div>
@@ -96,11 +115,11 @@ export const SareeDetailModal = ({
                   </div>
                   <div>
                     <span className="text-[#8A756C] font-light block">Artisan Origin:</span>
-                    <strong className="text-[#3D1E22] font-semibold">{saree.details.artisanOrigin}</strong>
+                    <strong className="text-[#3D1E22] font-semibold">{saree.details?.artisanOrigin}</strong>
                   </div>
                   <div>
                     <span className="text-[#8A756C] font-light block">Drape Feel:</span>
-                    <strong className="text-[#3D1E22] font-semibold">{saree.details.drapeFeel}</strong>
+                    <strong className="text-[#3D1E22] font-semibold">{saree.details?.drapeFeel}</strong>
                   </div>
                 </div>
 
@@ -110,14 +129,14 @@ export const SareeDetailModal = ({
                     ARCHITECTURAL MOTIF STORY
                   </h4>
                   <p className="text-xs text-[#6B5A52] leading-relaxed bg-[#FAF7F2] p-3.5 rounded-xl border border-[#E5D7B8]">
-                    {saree.details.motifStory}
+                    {saree.details?.motifStory}
                   </p>
 
                   <h4 className="font-cinzel text-xs font-bold text-[#3D1E22] uppercase tracking-wider pt-2">
-                    WARP & WEFT SPECIFICATION
+                    WARP &amp; WEFT SPECIFICATION
                   </h4>
                   <p className="text-xs text-[#6B5A52] leading-relaxed bg-[#FAF7F2] p-3.5 rounded-xl border border-[#E5D7B8]">
-                    {saree.details.warpWeft}
+                    {saree.details?.warpWeft}
                   </p>
                 </div>
 
@@ -125,21 +144,44 @@ export const SareeDetailModal = ({
                 <div className="p-3.5 rounded-2xl bg-[#FAF7F2] border border-[#D4AF37]/45 flex items-center space-x-3 shadow-xs">
                   <ShieldCheck className="w-5 h-5 text-[#A83232] shrink-0" />
                   <span className="text-xs text-[#3D1E22] font-medium leading-relaxed">
-                    Accompanied by Silk Mark India Hallmark & Holographic Certification Certificate.
+                    Accompanied by Silk Mark India Hallmark &amp; Holographic Certification Certificate.
                   </span>
                 </div>
 
-                {/* CTA */}
-                <div className="pt-2">
+                {/* E-Commerce CTAs */}
+                <div className="space-y-3 pt-2">
+                  <div className="grid grid-cols-2 gap-3">
+                    <button
+                      onClick={() => {
+                        if (onAddToCart) onAddToCart(saree);
+                        onClose();
+                      }}
+                      className="py-3.5 rounded-full bg-[#3D1E22] text-[#F3E5AB] hover:bg-[#582B30] text-xs font-cinzel font-bold tracking-widest uppercase transition-colors shadow-luxury border border-[#D4AF37]/40 flex items-center justify-center space-x-2 cursor-pointer"
+                    >
+                      <ShoppingBag className="w-4 h-4 text-[#D4AF37]" />
+                      <span>ADD TO CART</span>
+                    </button>
+
+                    <button
+                      onClick={() => {
+                        if (onBuyNow) onBuyNow(saree);
+                        onClose();
+                      }}
+                      className="py-3.5 rounded-full bg-[#D4AF37] text-[#2C1810] hover:bg-[#E6CA65] text-xs font-cinzel font-bold tracking-widest uppercase transition-colors shadow-luxury border border-[#D4AF37]/60 flex items-center justify-center space-x-2 cursor-pointer"
+                    >
+                      <span>BUY NOW</span>
+                    </button>
+                  </div>
+
                   <button
                     onClick={() => {
                       onClose();
                       onRequestViewing(saree.name);
                     }}
-                    className="w-full py-4 rounded-full bg-[#3D1E22] text-[#F3E5AB] hover:bg-[#582B30] text-xs font-semibold tracking-widest uppercase transition-colors shadow-luxury border border-[#D4AF37]/40 flex items-center justify-center space-x-2 cursor-pointer"
+                    className="w-full py-3 rounded-full bg-[#F3EAD8] text-[#8C6D38] hover:bg-[#E5D7B8] text-xs font-semibold tracking-wider uppercase transition-colors border border-[#E5D7B8] flex items-center justify-center space-x-2 cursor-pointer"
                   >
-                    <Calendar className="w-4 h-4 text-[#D4AF37]" />
-                    <span>REQUEST PRIVATE SHOWROOM VIEWING FOR THIS DRAPE</span>
+                    <Calendar className="w-4 h-4 text-[#8C6D38]" />
+                    <span>RESERVE PRIVATE SHOWROOM VIEWING</span>
                   </button>
                 </div>
 

@@ -11,22 +11,22 @@ export const HERO_SLIDES = [
     id: "slide-1",
     title: "Timeless Heritage, Reimagined for Eternity",
     subtitle: "Pure handwoven Kanchipuram silk since 1978.",
-    image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=1920&auto=format&fit=crop",
-    architecturalCaption: "The Grand Archway • Mandapam Courtyard",
+    image: "/sarees/saree_1.png",
+    architecturalCaption: "Bridal Crimson Kanchipuram",
   },
   {
     id: "slide-2",
     title: "Woven by Master Hands, Sanctified by Time",
-    subtitle: "180+ hours of devotion by hereditary master weavers.",
-    image: "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=1920&auto=format&fit=crop",
-    architecturalCaption: "The Golden Zari Vault • Kanchipuram Atelier",
+    subtitle: "210+ hours of devotion by hereditary master weavers.",
+    image: "/sarees/saree_2.png",
+    architecturalCaption: "Tissue Gold Kamalam Brocade",
   },
   {
     id: "slide-3",
     title: "The Bridal Trousseau Sanctuary",
     subtitle: "Private consultations for bespoke bridal trousseau.",
-    image: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=1920&auto=format&fit=crop",
-    architecturalCaption: "The Royal Bridal Suite • Sandstone Colonnade",
+    image: "/sarees/saree_7.png",
+    architecturalCaption: "Scarlet Royal Muhurtham Silk",
   }
 ];
 
@@ -96,7 +96,7 @@ export const SIGNATURE_MASTERWORKS = [
     weavingHours: 240,
     zariPurity: "Tested 24K Gold over Silver",
     colorPalette: "Royal Crimson, Champak Gold, Deep Vermilion",
-    image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=1200&auto=format&fit=crop",
+    image: "/sarees/saree_1.png",
     details: {
       warpWeft: "3-Ply Mulberry Silk Warp • Heavy Density Weft",
       motifStory: "Inspired by the architectural arches of Chettinad mansions and temple mandapam pillars.",
@@ -112,7 +112,7 @@ export const SIGNATURE_MASTERWORKS = [
     weavingHours: 210,
     zariPurity: "Pure Silver Thread with Gold Bath",
     colorPalette: "Luminous Tissue Gold, Warm Ivory Accent",
-    image: "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=1200&auto=format&fit=crop",
+    image: "/sarees/saree_2.png",
     details: {
       warpWeft: "Gold Zari Warp • Spun Silk Weft",
       motifStory: "Sacred Kamalam (Lotus) motif representing prosperity, elegance, and purity.",
@@ -128,7 +128,7 @@ export const SIGNATURE_MASTERWORKS = [
     weavingHours: 190,
     zariPurity: "Tested Heavy Zari",
     colorPalette: "Warm Sandalwood Cream, Royal Emerald, Antiqued Gold",
-    image: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=1200&auto=format&fit=crop",
+    image: "/sarees/saree_3.png",
     details: {
       warpWeft: "Heavy 2-Ply Mulberry Silk",
       motifStory: "Traditional Gopuram arch geometry along the border joints.",
@@ -144,7 +144,7 @@ export const SIGNATURE_MASTERWORKS = [
     weavingHours: 175,
     zariPurity: "Rose Gold Silver Alloy Zari",
     colorPalette: "Royal Amethyst, Muted Rose Gold",
-    image: "https://images.unsplash.com/photo-1544441893-675973e31985?q=80&w=1200&auto=format&fit=crop",
+    image: "/sarees/saree_4.png",
     details: {
       warpWeft: "Pure Mulberry Soft Silk",
       motifStory: "Carved stone screen lattice from North Indian and South Indian palace courtyards.",
@@ -160,7 +160,7 @@ export const SIGNATURE_MASTERWORKS = [
     weavingHours: 160,
     zariPurity: "Matte Antique Gold Zari",
     colorPalette: "Pearl Ivory, Brushed Brass, Soft Sand",
-    image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1200&auto=format&fit=crop",
+    image: "/sarees/saree_5.png",
     details: {
       warpWeft: "Organic Mulberry Raw Silk Warp",
       motifStory: "Architectural ceiling geometry from heritage South Indian verandas.",
@@ -176,7 +176,7 @@ export const SIGNATURE_MASTERWORKS = [
     weavingHours: 185,
     zariPurity: "Vintage Copper Gilding",
     colorPalette: "Midnight Indigo, Burnished Copper, Warm Bronze",
-    image: "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=1200&auto=format&fit=crop",
+    image: "/sarees/saree_6.png",
     details: {
       warpWeft: "Dense Double-Dyed Silk Thread",
       motifStory: "Night sky constellation and ancient botanical vines.",

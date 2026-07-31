@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import { Menu, X, Calendar, Sparkles } from 'lucide-react';
+import { Menu, X, Calendar, Sparkles, ShoppingBag, Heart } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import { useCart } from '../context/CartContext';
 
 const NAV_LINKS = [
   { label: 'Home', to: '/' },
@@ -14,6 +15,8 @@ const NAV_LINKS = [
 export const Header = ({ onOpenAppointment }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const { cartCount, wishlist, setIsCartOpen } = useCart();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 30);
@@ -50,14 +53,22 @@ export const Header = ({ onOpenAppointment }) => {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-14 sm:h-16 gap-4">
 
-          {/* Logo */}
-          <Link to="/" className="shrink-0 flex items-center" onClick={() => setMobileMenuOpen(false)}>
+          {/* Logo & Shop Name */}
+          <Link to="/" className="shrink-0 flex items-center gap-2.5 sm:gap-3 group" onClick={() => setMobileMenuOpen(false)}>
             <img
               src="/logo-burgundy-translucent.png"
-              alt="Shree Samunthrikaa Silks & Sarees"
-              className="h-10 sm:h-12 w-auto rounded-xl sm:rounded-2xl border border-[#D4AF37]/50 shadow-sm object-contain"
+              alt="Shree Samunthrika Silks & Sarees"
+              className="h-10 sm:h-12 w-auto rounded-xl sm:rounded-2xl border border-[#D4AF37]/50 shadow-sm object-contain transition-transform duration-300 group-hover:scale-105"
               style={{ filter: 'drop-shadow(0 2px 6px rgba(180,140,50,0.25))' }}
             />
+            <div className="flex flex-col justify-center">
+              <span className="font-cinzel text-xs sm:text-sm lg:text-base font-bold tracking-[0.12em] sm:tracking-[0.14em] text-[#3D1E22] leading-tight group-hover:text-[#8C6D38] transition-colors">
+                SHREE SAMUNTHRIKA
+              </span>
+              <span className="text-[8px] sm:text-[9.5px] lg:text-[10px] tracking-[0.2em] font-medium text-[#8C6D38] uppercase leading-tight">
+                SILKS AND SAREES
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Nav Links */}
@@ -83,6 +94,20 @@ export const Header = ({ onOpenAppointment }) => {
 
           {/* Right Controls */}
           <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+            {/* Cart Icon Button */}
+            <button
+              onClick={() => setIsCartOpen(true)}
+              className="relative p-2.5 rounded-full text-[#3D1E22] hover:bg-[#F3EAD8]/70 border border-[#D4AF37]/30 transition-all cursor-pointer flex items-center justify-center"
+              aria-label="View shopping cart"
+            >
+              <ShoppingBag className="w-5 h-5 text-[#3D1E22]" />
+              {cartCount > 0 && (
+                <span className="absolute -top-1 -right-1 bg-[#3D1E22] text-[#F3E5AB] border border-[#D4AF37] font-bold text-[10px] w-5 h-5 rounded-full flex items-center justify-center shadow-xs">
+                  {cartCount}
+                </span>
+              )}
+            </button>
+
             {/* Book button — desktop only */}
             <button
               onClick={() => onOpenAppointment()}

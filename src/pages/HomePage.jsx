@@ -7,10 +7,10 @@ import { Sparkles, ShieldCheck, Clock, Gem, Star, ChevronRight, MapPin, Calendar
 import { BRAND_DETAILS } from '../data/brandContent';
 
 const COLLECTION_PREVIEWS = [
-  { title: 'Bridal Collection', sub: 'Royal heritage. Pure 24K zari.', img: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=800&auto=format&fit=crop' },
-  { title: 'Kanchipuram Silk', sub: 'The sovereign handloom tradition.', img: 'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=800&auto=format&fit=crop' },
-  { title: 'Festive Collection', sub: 'Woven brilliance for every occasion.', img: 'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=800&auto=format&fit=crop' },
-  { title: 'Limited Edition', sub: 'Rare archival masterworks.', img: 'https://images.unsplash.com/photo-1544441893-675973e31985?q=80&w=800&auto=format&fit=crop' },
+  { title: 'Bridal Collection', sub: 'Royal heritage. Pure 24K zari.', img: '/sarees/saree_1.png' },
+  { title: 'Kanchipuram Silk', sub: 'The sovereign handloom tradition.', img: '/sarees/saree_2.png' },
+  { title: 'Festive Collection', sub: 'Woven brilliance for every occasion.', img: '/sarees/saree_12.png' },
+  { title: 'Limited Edition', sub: 'Rare archival masterworks.', img: '/sarees/saree_11.png' },
 ];
 
 const TESTIMONIALS = [
@@ -148,7 +148,7 @@ export function HomePage({ onOpenAppointment }) {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
             <div className="heritage-arch-top overflow-hidden border-2 border-[#D4AF37]/40 shadow-luxury bg-[#E8DCC4] order-1 lg:order-0">
               <img
-                src="https://images.unsplash.com/photo-1606744888344-493238951221?q=80&w=1000&auto=format&fit=crop"
+                src="/sarees/saree_7.png"
                 alt="Handloom Weaving"
                 referrerPolicy="no-referrer"
                 loading="lazy"
@@ -267,12 +267,12 @@ export function HomePage({ onOpenAppointment }) {
           {/* 2-col mobile → 3-col tablet → 6-col desktop */}
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-3">
             {[
-              'https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=400&auto=format&fit=crop',
-              'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=400&auto=format&fit=crop',
-              'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=400&auto=format&fit=crop',
-              'https://images.unsplash.com/photo-1544441893-675973e31985?q=80&w=400&auto=format&fit=crop',
-              'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=400&auto=format&fit=crop',
-              'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=400&auto=format&fit=crop',
+              '/sarees/saree_1.png',
+              '/sarees/saree_2.png',
+              '/sarees/saree_3.png',
+              '/sarees/saree_4.png',
+              '/sarees/saree_5.png',
+              '/sarees/saree_6.png',
             ].map((src, i) => (
               <div key={i} className="aspect-square rounded-xl sm:rounded-2xl overflow-hidden border border-[#D4AF37]/25 shadow-sm group cursor-pointer">
                 <img
